@@ -31,7 +31,7 @@ A [docker-compose](https://docs.docker.com/compose/) sample to start `MySQL` dat
   ```
     # you can stop service by the command
     $ docker stop mysqldb1
-    $ docker stop 
+    $ docker stop admindb1
     # you can start service by the command
     $ docker start mysqldb1
     $ docker start admindb1
