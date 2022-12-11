@@ -26,10 +26,22 @@ A [docker-compose](https://docs.docker.com/compose/) sample to start `MySQL` dat
   ```
     # Enter in the docker container
     $ docker exec -it admindb1 bash
-  ``` 
-5. Other:
+  ```
+5. Other commands maybe needed:
+  ```
+    # you can stop service by the command
+    $ docker stop mysqldb1
+    $ docker stop 
+    # you can start service by the command
+    $ docker start mysqldb1
+    $ docker start admindb1
+    # you can restart service by the command
+    $ docker restart mysqldb1
+    $ docker restart admindb1
+  ```
+6. Other:
   ```
     # you can set up database variables in the .env file
-    
+  ```
 
 
