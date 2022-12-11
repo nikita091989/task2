@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql:8.0.31
+    container_name: mysqldb1
+    env_file:
+      - ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD:${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE:${MYSQL_DATABASE}
+      - MYSQL_USER:${MYSQL_USER}
+      - MYSQL_PASSWORD:${MYSQL_PASSWORD}
+    ports:
+      - 8833:3306
+    volumes:
+      - ./database/db1:/var/lib/mysql
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.0
+    container_name: admindb1
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    ports:
+      - 8080:80
+    restart: always
